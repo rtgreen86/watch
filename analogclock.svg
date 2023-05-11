@@ -16,21 +16,27 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="CLOCK.svg">
-   
+
   <desc>
     Rework of https://openclipart.org/detail/233657/clock to keep time
-    
+
     updates every 10 seconds. Added stroke to clock hands so they can be seen when
     over the numbers. Can easily be scaled and positioned where desired.
-  
+
     Jay Nick
     STEAMcoded.org
   </desc>
-  
+
   <script type="application/x-javascript"><![CDATA[
     var Clock = new function()
     {
       window.addEventListener("load", function(e) {setClock(); }, false);
+      window.onhashchange = setClock;
+
+      function parseHash() {
+         const [hours = 0, minutes = 0] = location.hash.substring(1).split(':');
+         return [+hours, +minutes];
+      }
 
       function setClock()
       {
@@ -39,29 +45,38 @@
         var hr;
         var deg;
         var node;
-        
-        var dt = new Date();
+
+        const [hours, minutes] = parseHash()
+        const now = new Date();
+
+        var dt = new Date(
+         now.getFullYear(),
+         now.getMonth(),
+         now.getDate(),
+         hours,
+         minutes,
+        );
         var deg=0;
-      
+
         min = dt.getMinutes();
         sec = dt.getSeconds();
         deg = (360/3600)*(60*min+sec);
         node = document.getElementById("minutes");
         node.setAttribute("transform","rotate("+deg+",367.3,487.5)");
-        
+
         hr = dt.getHours();
         deg = 30*hr + 30/60*min;
         var node = document.getElementById("hours");
         deg-=150;
         deg%=360;
         node.setAttribute("transform","rotate("+deg+",367.3,487.5)");
-        
+
         setTimeout(setClock,(10-dt.getSeconds()%10)*1000);
       }
     }();
   ]]>
   </script>
-  
+
   <defs
      id="defs4">
     <inkscape:path-effect
@@ -138,7 +153,7 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  
+
   <g transform="translate(0,0) scale(1)">
   <g
      inkscape:label="Layer 1"
