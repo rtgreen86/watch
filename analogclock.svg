@@ -33,11 +33,6 @@
       window.addEventListener("load", function(e) {setClock(); }, false);
       window.onhashchange = setClock;
 
-      function parseHash() {
-         const [hours = 0, minutes = 0] = location.hash.substring(1).split(':');
-         return [+hours, +minutes];
-      }
-
       function setClock()
       {
         var sec;
@@ -45,17 +40,9 @@
         var hr;
         var deg;
         var node;
-
-        const [hours, minutes] = parseHash()
-        const now = new Date();
-
-        var dt = new Date(
-         now.getFullYear(),
-         now.getMonth(),
-         now.getDate(),
-         hours,
-         minutes,
-        );
+        const dt = location.hash.startsWith('#')
+          ? new Date(location.hash.substring(1))
+          : new Date();
         var deg=0;
 
         min = dt.getMinutes();
