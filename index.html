@@ -15,6 +15,31 @@
   <iframe id="clock3" src="analogclock.svg" style="border:none; width: 10em; height: 10em"></iframe>
   <button onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</button>
 
+  <form>
+    <div>
+      <button type="button">+</button>
+      <button type="button">+</button>
+      <button type="button">+</button>
+    </div>
+
+    <div>
+      <input type="number" min="0" max="23" step="1">
+      :
+      <input type="number" min="0" max="60" step="1">
+    </div>
+
+    <div>
+      <button type="button">-</button>
+      <button type="button">-</button>
+      <button type="button">-</button>
+    </div>
+  </form>
+
+
+  <form>
+    <label for="notes">Notes:</label><br>
+    <textarea id="notes"></textarea>
+  </form>
 
 
 </body>
