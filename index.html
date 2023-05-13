@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,53 +10,148 @@
 
 
   </script>
+
+
+  <style>
+    :root {
+      --platinum: hsla(144, 15%, 87%, 1);
+      --white: hsla(0, 0%, 100%, 1);
+      --pink: hsla(349, 100%, 90%, 1);
+      --cherry-blossom-pink: hsla(351, 77%, 82%, 1);
+      --mountbatten-pink: hsla(343, 13%, 56%, 1);
+    }
+
+    body {
+      font: 16px system-ui, -apple-system, sans-serif;
+      line-height: 22px;
+    }
+
+
+    .clearfix:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .top-panel {
+      background-color: var(--platinum);
+    }
+
+    .top-panel ul {
+      list-style: none inside;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .top-panel li {
+      float: left;
+      margin: 10px;
+
+    }
+
+    .top-panel button {
+      height: 44px;
+    }
+
+    main {
+      padding: 60px 0px;
+      margin: auto;
+    }
+
+    .column {
+      float: left;
+      width: 45vw;
+      box-sizing: border-box;
+      margin-right: 10px;
+    }
+
+    input[type=number] {
+      font: 1em Monospace;
+      font-weight: bold;
+      text-align: center;
+      border: none;
+      background-color: transparent;
+      padding: 0px;
+    }
+
+    .clockbtn:hover {
+      outline: 1px solid black;
+    }
+
+  </style>
+
 </head>
+
 <body style="background-color: lightblue;">
-  <div style="width: 70vh; height: 70vh; max-width: 50vw; max-height: 50vw;">
-    <iframe id="clock3" src="analogclock.svg" style="border:none;width: 100%; height: 100%"></iframe>
-  </div>
+
+  <header class="top-panel clearfix">
+    <form>
+      <ul>
+        <li><button type="button" id="today">Today</button></li>
+        <li>Randomize:</li>
+        <li>
+          <input type="checkbox" id="hours" checked>
+          <label for="hours">Hours</label><br>
+          <input type="checkbox" id="minutes" checked>
+          <label for="minutes">Minutes</label><br>
+        </li>
+        <li><button type="button" id="randomize">Random</button></li>
+        <li><button type="button" onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</button></li>
+      </ul>
+    </form>
+  </header>
+
+  <main class="clearfix">
+
+    <section class="column">
+      <div style="width: 100%; height: 50vh;">
+        <iframe id="clock3" src="analogclock.svg" style="border:none;width: 100%; height: 100%"></iframe>
+      </div>
+
+      <form style="margin-top: 10px">
+        <table style="text-align: center; font-size: 4em; margin: auto; border-collapse: collapse; vertical-align: top;">
+          <tr>
+            <td><button type="button" class="clockbtn" style="width: 100%; vertical-align: top; border: none; background-color: transparent; margin: 3px">+</button></td>
+            <td></td>
+            <td><button type="button" class="clockbtn" style="width: 100%; vertical-align: top; border: none; background-color: transparent; margin: 3px">+</button></td>
+            <td><button type="button" class="clockbtn" style="width: 100%; vertical-align: top; border: none; background-color: transparent; margin: 3px">+</button></td>
+          </tr>
+
+          <tr style="background-color: gold">
+            <td><input type="number" min="0" max="23" step="1" value="10"></td>
+            <td>:</td>
+            <td colspan="2"><input type="number" min="0" max="60" step="1" value="33"></td>
+          </tr>
+
+          <tr style="vertical-align: top;">
+            <td><button type="button" class="clockbtn" style="width: 100%; vertical-align: top; border: none; background-color: transparent; margin: 3px">-</button></td>
+            <td></td>
+            <td><button type="button" class="clockbtn" style="width: 100%; vertical-align: top; border: none; background-color: transparent;  margin: 3px">-</button></td>
+            <td><button type="button" class="clockbtn" style="width: 100%; vertical-align: top; border: none; background-color: transparent;  margin: 3px">-</button></td>
+          </tr>
+        </table>
+
+      </form>
+
+
+    </section>
+
+    <section class="column">
+      <form>
+        <label for="notes" style="font-size: 2em">Notes:</label><br>
+        <textarea id="notes" style="width: 100%; height: 60vh; padding: 10px; font: 3em Arial"></textarea>
+      </form>
+    </section>
 
 
 
-  <button onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</button>
-
-  <form>
-    <div>
-      <button type="button">+</button>
-      <button type="button">+</button>
-      <button type="button">+</button>
-    </div>
-
-    <div>
-      <input type="number" min="0" max="23" step="1">
-      :
-      <input type="number" min="0" max="60" step="1">
-    </div>
-
-    <div>
-      <button type="button">-</button>
-      <button type="button">-</button>
-      <button type="button">-</button>
-    </div>
-    <div>
-      <div>Randomize</div>
-      <input type="checkbox" id="hours" checked>
-      <label for="hours">Hours</label><br>
-      <input type="checkbox" id="minutes" checked>
-      <label for="minutes">Minutes</label><br>
-      <button type="button">Random</button>
-    </div>
-    <div>
-      <button type="button">Now</button>
-    </div>
-  </form>
+  </main>
 
 
-  <form>
-    <label for="notes">Notes:</label><br>
-    <textarea id="notes"></textarea>
-  </form>
+
+
 
 
 </body>
+
 </html>
