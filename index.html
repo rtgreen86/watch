@@ -11,8 +11,12 @@
   </script>
 </head>
 <body style="background-color: lightblue;">
+  <div style="width: 70vh; height: 70vh; max-width: 50vw; max-height: 50vw;">
+    <iframe id="clock3" src="analogclock.svg" style="border:none;width: 100%; height: 100%"></iframe>
+  </div>
 
-  <iframe id="clock3" src="analogclock.svg" style="border:none; width: 10em; height: 10em"></iframe>
+
+
   <button onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</button>
 
   <form>
@@ -32,6 +36,17 @@
       <button type="button">-</button>
       <button type="button">-</button>
       <button type="button">-</button>
+    </div>
+    <div>
+      <div>Randomize</div>
+      <input type="checkbox" id="hours" checked>
+      <label for="hours">Hours</label><br>
+      <input type="checkbox" id="minutes" checked>
+      <label for="minutes">Minutes</label><br>
+      <button type="button">Random</button>
+    </div>
+    <div>
+      <button type="button">Now</button>
     </div>
   </form>
 
