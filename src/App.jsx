@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from './Button';
+import Checkbox from './Checkbox';
 import TopPanel from './TopPanel';
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
         <Button>Today</Button>
         Randomize:
         <>
-          <input type="checkbox" id="hours" checked></input><label for="hours">Hours</label><br />
-          <input type="checkbox" id="minutes" checked></input><label for="minutes">Minutes</label><br />
+          <Checkbox checked>Hours</Checkbox><br />
+          <Checkbox checked>Minutes</Checkbox><br />
         </>
         <Button>Random</Button>
         <Button type="button"
