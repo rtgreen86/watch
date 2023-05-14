@@ -17,8 +17,8 @@ function App() {
           <input type="checkbox" id="minutes" checked></input><label for="minutes">Minutes</label><br />
         </>
         <Button>Random</Button>
-        <button type="button"
-          onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</button>
+        <Button type="button"
+          onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</Button>
       </TopPanel>
     </div>
   );
