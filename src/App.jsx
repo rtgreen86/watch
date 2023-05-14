@@ -20,7 +20,17 @@ function App() {
           Learn React
         </a>
       </header>
-      <TopPanel />
+      <TopPanel>
+        <Button>Today</Button>
+        Randomize:
+        <>
+          <input type="checkbox" id="hours" checked></input><label for="hours">Hours</label><br />
+          <input type="checkbox" id="minutes" checked></input><label for="minutes">Minutes</label><br />
+        </>
+        <Button>Random</Button>
+        <button type="button"
+          onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</button>
+      </TopPanel>
     </div>
   );
 }
