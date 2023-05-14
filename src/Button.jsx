@@ -1,3 +1,3 @@
 export default function Button({ children = 'Button' }) {
-  return <button type="button" id="today">{ children }</button>
+  return <button type="button">{ children }</button>
 }
