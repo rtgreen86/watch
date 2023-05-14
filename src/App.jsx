@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from './Button';
+import TopPanel from './TopPanel';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </a>
       </header>
       <Button>OK</Button>
+      <TopPanel />
     </div>
   );
 }

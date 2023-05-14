@@ -1,0 +1,18 @@
+.top-panel {
+  background-color: var(--platinum);
+}
+
+.top-panel ul {
+  list-style: none inside;
+  padding: 0px;
+  margin: 0px;
+}
+
+.top-panel li {
+  float: left;
+  margin: 10px;
+}
+
+.top-panel button {
+  height: 44px;
+}

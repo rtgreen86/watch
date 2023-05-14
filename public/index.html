@@ -43,25 +43,6 @@
       display: table;
     }
 
-    .top-panel {
-      background-color: var(--platinum);
-    }
-
-    .top-panel ul {
-      list-style: none inside;
-      padding: 0px;
-      margin: 0px;
-    }
-
-    .top-panel li {
-      float: left;
-      margin: 10px;
-    }
-
-    .top-panel button {
-      height: 44px;
-    }
-
     main {
       padding: 60px 0px;
       margin: auto;
@@ -138,24 +119,6 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root" style="background-color: lightblue;"></div>
-
-  <header class="top-panel clearfix">
-    <form>
-      <ul>
-        <li><button type="button" id="today">Today</button></li>
-        <li>Randomize:</li>
-        <li>
-          <input type="checkbox" id="hours" checked>
-          <label for="hours">Hours</label><br>
-          <input type="checkbox" id="minutes" checked>
-          <label for="minutes">Minutes</label><br>
-        </li>
-        <li><button type="button" id="randomize">Random</button></li>
-        <li><button type="button"
-            onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</button></li>
-      </ul>
-    </form>
-  </header>
 
   <main class="clearfix">
     <section class="column">
