@@ -20,7 +20,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <Button>OK</Button>
       <TopPanel />
     </div>
   );
