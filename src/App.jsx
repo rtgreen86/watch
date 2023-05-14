@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Button from './Button';
 import Checkbox from './Checkbox';
@@ -8,9 +7,6 @@ import AnalogClockFrame from './AnalogClockFrame';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
       <TopPanel>
         <Button>Today</Button>
         Randomize:
