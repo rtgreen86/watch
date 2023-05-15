@@ -7,11 +7,11 @@ function decorateChildren(children) {
   if (!Array.isArray(children)) {
     return <li>{children}</li>;
   }
-  return children.map(item => (<li>{item}</li>));
+  return children.map(item => (<li key={item.key}>{item}</li>));
 }
 
 export default function TopPanel({ children }) {
-  return (<header class="top-panel clearfix">
+  return (<header className="top-panel clearfix">
     <form><ul>{decorateChildren(children)}</ul></form>
   </header >);
 }
