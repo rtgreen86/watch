@@ -9,7 +9,7 @@ import AnalogClockFrame from './AnalogClockFrame';
 import DigitalClock from './DigitalClock';
 
 function App() {
-  const [date] = useState(new Date());
+  const [date, setDate] = useState(new Date());
 
   return (
     <div className="App">
@@ -27,10 +27,8 @@ function App() {
 
       <main class="clearfix">
         <section class="column">
-          <div class="analog-clock">
-            <AnalogClockFrame date={date}></AnalogClockFrame>
-          </div>
-          <DigitalClock date={date}></DigitalClock>
+          <AnalogClockFrame date={date}></AnalogClockFrame>
+          <DigitalClock date={date} onChange={setDate}></DigitalClock>
         </section>
 
         <section class="column">
