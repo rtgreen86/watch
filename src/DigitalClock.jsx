@@ -1,10 +1,12 @@
 import './DigitalClock.css';
 
+import DigitalClockInput from './DigitalClockInput';
+
 export default function DigitalClock({ date = new Date(), onChange = () => { } }) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
 
-  const createDate = (hours = 0, minutes = 0) => new Date(
+  const createDate = (hours = date.getHours(), minutes = date.getMinutes()) => new Date(
     date.getFullYear(),
     date.getMonth(),
     date.getDate(),
@@ -13,8 +15,6 @@ export default function DigitalClock({ date = new Date(), onChange = () => { } }
   );
 
   const incrementDate = (hours = 0, minutes = 0) => createDate(date.getHours() + hours, date.getMinutes() + minutes);
-
-  const formatValue = (value) => value.toString(10).padStart(2, '0');
 
   return (<form class="digital-clock">
     <table>
@@ -26,9 +26,9 @@ export default function DigitalClock({ date = new Date(), onChange = () => { } }
       </tr>
 
       <tr class="display">
-        <td><input type="text" value={formatValue(hours)} /></td>
+        <td><DigitalClockInput value={hours} onInput={(value) => onChange(createDate(value))} max={23} /></td>
         <td>:</td>
-        <td colSpan="2"><input type="text" value={formatValue(minutes)} /></td>
+        <td colSpan="2"><DigitalClockInput value={minutes} onInput={(value) => onChange(createDate(date.getHours(), value))} max={59} /></td>
       </tr>
 
       <tr style={{ verticalAlign: 'top' }}>

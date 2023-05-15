@@ -22,16 +22,6 @@
   background-color: gold;
 }
 
-.digital-clock input[type=text] {
-  font: 1em Monospace;
-  font-weight: bold;
-  text-align: center;
-  border: none;
-  background-color: transparent;
-  padding: 0px;
-  width: 2em;
-}
-
 .digital-clock button:hover {
   outline: 1px solid black;
 }
