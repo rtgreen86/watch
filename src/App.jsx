@@ -11,10 +11,14 @@ import DigitalClock from './DigitalClock';
 function App() {
   const [date, setDate] = useState(new Date());
 
+  const handleTodayClick = () => {
+    setDate(new Date());
+  }
+
   return (
     <div className="App">
       <TopPanel>
-        <Button>Today</Button>
+        <button type="button" onClick={handleTodayClick}>Now</button>
         Randomize:
         <>
           <Checkbox checked>Hours</Checkbox><br />
