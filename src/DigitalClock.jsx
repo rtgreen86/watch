@@ -14,6 +14,8 @@ export default function DigitalClock({ date = new Date(), onChange = () => { } }
 
   const incrementDate = (hours = 0, minutes = 0) => createDate(date.getHours() + hours, date.getMinutes() + minutes);
 
+  const formatValue = (value) => value.toString(10).padStart(2, '0');
+
   return (<form class="digital-clock">
     <table>
       <tr>
@@ -24,9 +26,9 @@ export default function DigitalClock({ date = new Date(), onChange = () => { } }
       </tr>
 
       <tr class="display">
-        <td><input type="number" min="0" max="23" step="1" value={hours} /></td>
+        <td><input type="text" value={formatValue(hours)} /></td>
         <td>:</td>
-        <td colSpan="2"><input type="number" min="0" max="60" step="1" value={minutes} /></td>
+        <td colSpan="2"><input type="text" value={formatValue(minutes)} /></td>
       </tr>
 
       <tr style={{ verticalAlign: 'top' }}>
