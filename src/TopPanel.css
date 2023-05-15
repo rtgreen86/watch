@@ -1,5 +1,6 @@
 .top-panel {
   background-color: var(--platinum);
+  user-select: none;
 }
 
 .top-panel ul {
