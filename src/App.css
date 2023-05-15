@@ -10,43 +10,6 @@ main {
   margin-right: 10px;
 }
 
-.digital-clock {
-  margin-top: 10px;
-}
-
-.digital-clock table {
-  text-align: center;
-  font-size: 4em;
-  margin: auto;
-  border-collapse: collapse;
-  vertical-align: top;
-}
-
-.digital-clock button {
-  width: 100%;
-  vertical-align: top;
-  border: none;
-  background-color: transparent;
-  margin: 3px;
-}
-
-.digital-clock .display {
-  background-color: gold;
-}
-
-.digital-clock input[type=number] {
-  font: 1em Monospace;
-  font-weight: bold;
-  text-align: center;
-  border: none;
-  background-color: transparent;
-  padding: 0px;
-}
-
-.digital-clock button:hover {
-  outline: 1px solid black;
-}
-
 .notes label {
   font-size: 2em;
 }

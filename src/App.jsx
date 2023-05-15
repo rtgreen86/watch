@@ -6,6 +6,7 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import TopPanel from './TopPanel';
 import AnalogClockFrame from './AnalogClockFrame';
+import DigitalClock from './DigitalClock';
 
 function App() {
   const [date] = useState(new Date());
@@ -29,30 +30,7 @@ function App() {
           <div class="analog-clock">
             <AnalogClockFrame date={date}></AnalogClockFrame>
           </div>
-
-          <form class="digital-clock">
-            <table>
-              <tr>
-                <td><button type="button">+</button></td>
-                <td></td>
-                <td><button type="button">+</button></td>
-                <td><button type="button">+</button></td>
-              </tr>
-
-              <tr class="display">
-                <td><input type="number" min="0" max="23" step="1" value="10" /></td>
-                <td>:</td>
-                <td colspan="2"><input type="number" min="0" max="60" step="1" value="33" /></td>
-              </tr>
-
-              <tr style={{ verticalAlign: 'top' }}>
-                <td><button type="button">-</button></td>
-                <td></td>
-                <td><button type="button">-</button></td>
-                <td><button type="button">-</button></td>
-              </tr>
-            </table>
-          </form>
+          <DigitalClock date={date}></DigitalClock>
         </section>
 
         <section class="column">
