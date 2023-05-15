@@ -1,5 +1,15 @@
+:root {
+  --platinum: hsla(144, 15%, 87%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --pink: hsla(349, 100%, 90%, 1);
+  --cherry-blossom-pink: hsla(351, 77%, 82%, 1);
+  --mountbatten-pink: hsla(343, 13%, 56%, 1);
+}
+
 body {
   margin: 0;
+  line-height: 22px;
+  font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +20,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table;
 }
