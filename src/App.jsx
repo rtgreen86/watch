@@ -2,10 +2,10 @@ import './App.css';
 
 import { useState } from 'react';
 
-import Button from './Button';
 import TopPanel from './TopPanel';
 import AnalogClockFrame from './AnalogClockFrame';
 import DigitalClock from './DigitalClock';
+import DayTime from './DayTime';
 
 function App() {
   const [date, setDate] = useState(new Date());
@@ -37,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+      <DayTime date={date} />
       <TopPanel>
         <button type="button" onClick={handleTodayClick}>Now</button>
         Randomize:
