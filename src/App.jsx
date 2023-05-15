@@ -1,10 +1,15 @@
 import './App.css';
+
+import { useState } from 'react';
+
 import Button from './Button';
 import Checkbox from './Checkbox';
 import TopPanel from './TopPanel';
 import AnalogClockFrame from './AnalogClockFrame';
 
 function App() {
+  const [date] = useState(new Date());
+
   return (
     <div className="App">
       <TopPanel>
@@ -22,7 +27,7 @@ function App() {
       <main class="clearfix">
         <section class="column">
           <div class="analog-clock">
-            <AnalogClockFrame></AnalogClockFrame>
+            <AnalogClockFrame date={date}></AnalogClockFrame>
           </div>
 
           <form class="digital-clock">
