@@ -3,7 +3,6 @@ import './App.css';
 import { useState } from 'react';
 
 import Button from './Button';
-import Checkbox from './Checkbox';
 import TopPanel from './TopPanel';
 import AnalogClockFrame from './AnalogClockFrame';
 import DigitalClock from './DigitalClock';
@@ -15,18 +14,37 @@ function App() {
     setDate(new Date());
   }
 
+  const [isHoursChecked, setHoursChecked] = useState(true);
+  const [isMinutesChecked, setMinutesChecked] = useState(true);
+
+  const createRandom = () => {
+    const hours = isHoursChecked
+      ? Math.floor(Math.random() * 23)
+      : date.getHours();
+
+    const minutes = isMinutesChecked
+      ? Math.floor(Math.random() * 59)
+      : date.getMinutes();
+
+    setDate(new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      hours,
+      minutes
+    ));
+  }
+
   return (
     <div className="App">
       <TopPanel>
         <button type="button" onClick={handleTodayClick}>Now</button>
         Randomize:
         <>
-          <Checkbox checked>Hours</Checkbox><br />
-          <Checkbox checked>Minutes</Checkbox><br />
+          <input type="checkbox" id="hours" checked={isHoursChecked} onChange={(event) => setHoursChecked(event.target.checked)}></input><label for="hours">Hours</label><br />
+          <input type="checkbox" id="minutes" checked={isMinutesChecked} onChange={(event) => setMinutesChecked(event.target.checked)}></input><label for="minutes">Minutes</label><br />
         </>
-        <Button>Random</Button>
-        <Button type="button"
-          onClick="document.getElementById('clock3').src='analogclock.svg#2022-01-01T18:00'">18:00</Button>
+        <button type="button" onClick={createRandom}>Random</button>
       </TopPanel>
 
       <main class="clearfix">
